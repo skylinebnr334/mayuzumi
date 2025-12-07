@@ -105,4 +105,5 @@ export type API = {
    * GitHubを開く
    */
   openGitHub: () => void;
+  os_info:string;
 };

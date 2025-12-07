@@ -1,5 +1,5 @@
 import { contextBridge, ipcRenderer } from "electron";
-
+let platform_os_val=process.platform;
 contextBridge.exposeInMainWorld("api", {
   // ビューに対する操作
   focusView: () => ipcRenderer.send("focus-view"),
@@ -29,5 +29,6 @@ contextBridge.exposeInMainWorld("api", {
 
   // リンク関係
   openPrivacyPolicy: () => ipcRenderer.send("open-privacy-policy"),
-  openGitHub: () => ipcRenderer.send("open-github")
+  openGitHub: () => ipcRenderer.send("open-github"),
+  os_info:platform_os_val
 });
